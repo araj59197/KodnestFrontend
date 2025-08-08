@@ -420,7 +420,7 @@ This project is **automatically deployed** using GitHub Pages:
 ---
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
+  <img src="https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif" width="200">
 </div>
 
 ## 📸 Screenshots
@@ -428,30 +428,67 @@ This project is **automatically deployed** using GitHub Pages:
 <div align="center">
 
 ### 🏠 **Home Page**
-*Elegant landing page with hero section and featured products*
+*Elegant landing page with luxury jewelry showcase*
 
-<img src="https://via.placeholder.com/800x400/D4AF37/FFFFFF?text=🏠+Home+Page+Preview" alt="Home Page" width="100%">
+<img src="https://raw.githubusercontent.com/araj59197/KodnestFrontend/main/Html/Images/gold-necklace.jpg" alt="Featured Jewelry" width="400">
 
----
-
-### 📖 **About Page**  
-*Company story and team showcase*
-
-<img src="https://via.placeholder.com/800x400/B8860B/FFFFFF?text=📖+About+Page+Preview" alt="About Page" width="100%">
+**Live Demo:** [🌐 Kohinoor Jewels Homepage](https://araj59197.github.io/KodnestFrontend/)
 
 ---
 
-### 🛍️ **Collections Page**
-*Product catalog with interactive features*
+### � **Featured Products**  
+*Premium jewelry collection display*
 
-<img src="https://via.placeholder.com/800x400/FFD700/000000?text=🛍️+Collections+Page+Preview" alt="Collections Page" width="100%">
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="https://raw.githubusercontent.com/araj59197/KodnestFrontend/main/Html/Images/gold-necklace.jpg" alt="Gold Necklace" width="200"><br>
+<b>Gold Necklace</b><br>
+<i>₹85,000</i>
+</td>
+<td align="center" width="33%">
+<img src="https://raw.githubusercontent.com/araj59197/KodnestFrontend/main/Html/Images/diamond-earrings.jpg" alt="Diamond Earrings" width="200"><br>
+<b>Diamond Earrings</b><br>
+<i>₹45,000</i>
+</td>
+<td align="center" width="33%">
+<img src="https://raw.githubusercontent.com/araj59197/KodnestFrontend/main/Html/Images/emerald-ring.jpg" alt="Emerald Ring" width="200"><br>
+<b>Emerald Ring</b><br>
+<i>₹65,000</i>
+</td>
+</tr>
+</table>
 
 ---
 
-### 📞 **Contact Page**
-*Contact form and business information*
+### 🎨 **Design Showcase**
+*Professional UI/UX with luxury gold theme*
 
-<img src="https://via.placeholder.com/800x400/2C1810/FFFFFF?text=📞+Contact+Page+Preview" alt="Contact Page" width="100%">
+<div align="center">
+
+| 🏠 **Homepage** | 📖 **About** | 🛍️ **Collections** | 📞 **Contact** |
+|:---:|:---:|:---:|:---:|
+| Hero Section<br>Featured Products<br>Call-to-Action | Company History<br>Team Profiles<br>Values & Mission | Product Catalog<br>Category Filters<br>Product Details | Contact Form<br>Business Info<br>Location Details |
+
+</div>
+
+---
+
+### 🌐 **Live Website Features**
+*Interactive elements and responsive design*
+
+<div align="center">
+
+[![Live Demo](https://img.shields.io/badge/🌐_Visit_Live_Site-FFD700?style=for-the-badge&labelColor=DAA520)](https://araj59197.github.io/KodnestFrontend/)
+
+**Key Highlights:**
+- ✨ **Responsive Design** - Works on all devices
+- 🎨 **Luxury Theme** - Gold and brown color palette
+- � **Mobile Optimized** - Touch-friendly interface
+- ⚡ **Fast Loading** - Optimized performance
+- 📧 **Contact Form** - Functional email integration
+
+</div>
 
 </div>
 
@@ -547,8 +584,36 @@ We welcome contributions to make Kohinoor Jewels even better!
 **🎯 Specializing in:** Frontend Development • UI/UX Design • Responsive Web Design
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=araj59197&show_icons=true&theme=gold&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=araj59197&layout=compact&langs_count=7&theme=gold"/>
+
+### **💻 This Project Technologies**
+
+<table>
+<tr>
+<td align="center">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" width="60" height="60"/>
+<br><strong>HTML5</strong>
+<br><em>Semantic Markup</em>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" width="60" height="60"/>
+<br><strong>CSS3</strong>
+<br><em>Responsive Design</em>
+</td>
+<td align="center">
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width="60" height="60"/>
+<br><strong>JavaScript</strong>
+<br><em>Interactive Elements</em>
+</td>
+<td align="center">
+<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="60" height="60"/>
+<br><strong>GitHub Pages</strong>
+<br><em>Static Hosting</em>
+</td>
+</tr>
+</table>
+
+**🎯 Pure Frontend Excellence:** HTML • CSS • Responsive Design • GitHub Pages
+
 </div>
 
 </div>
