@@ -48,31 +48,6 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
-                <div class="header-actions">
-                    <div class="search-container">
-                        <input type="text" class="search-input" placeholder="Search jewelry..." aria-label="Search products">
-                        <button class="search-btn" aria-label="Search">
-                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="m21 21-4.35-4.35"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <button class="cart-btn" aria-label="Shopping cart">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
-                            <path d="M20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                        </svg>
-                        <span class="cart-count">0</span>
-                    </button>
-                    <button class="wishlist-btn" aria-label="Wishlist">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                        <span class="wishlist-count">0</span>
-                    </button>
-                </div>
             </div>
         </div>
     </header>
@@ -183,11 +158,6 @@
                                 alt="Gold Necklace - Elegant 22K gold necklace with traditional Indian design"
                                 class="product-img"
                             />
-                            <div class="product-actions">
-                                <button class="action-btn wishlist">❤️</button>
-                                <button class="action-btn quick-view">👁️</button>
-                                <button class="action-btn share">📤</button>
-                            </div>
                         </div>
                         <div class="product-content">
                             <div class="product-rating">
@@ -203,7 +173,6 @@
                                 <span class="original-price">₹95,000</span>
                                 <span class="discount">10% OFF</span>
                             </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </article>
 
@@ -216,11 +185,6 @@
                                 alt="Diamond Earrings - Stunning diamond studs perfect for any occasion"
                                 class="product-img"
                             />
-                            <div class="product-actions">
-                                <button class="action-btn wishlist">❤️</button>
-                                <button class="action-btn quick-view">👁️</button>
-                                <button class="action-btn share">📤</button>
-                            </div>
                         </div>
                         <div class="product-content">
                             <div class="product-rating">
@@ -236,7 +200,6 @@
                                 <span class="original-price">₹50,000</span>
                                 <span class="discount">10% OFF</span>
                             </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </article>
 
@@ -249,11 +212,6 @@
                                 alt="Emerald Ring - Vintage-style ring with a radiant emerald stone"
                                 class="product-img"
                             />
-                            <div class="product-actions">
-                                <button class="action-btn wishlist">❤️</button>
-                                <button class="action-btn quick-view">👁️</button>
-                                <button class="action-btn share">📤</button>
-                            </div>
                         </div>
                         <div class="product-content">
                             <div class="product-rating">
@@ -269,7 +227,6 @@
                                 <span class="original-price">₹70,000</span>
                                 <span class="discount">7% OFF</span>
                             </div>
-                            <button class="add-to-cart-btn">Add to Cart</button>
                         </div>
                     </article>
                 </div>
@@ -369,356 +326,6 @@
             </p>
         </div>
     </footer>
-
-    <!-- Enhanced Functionality JavaScript -->
-    <script>
-        // Initialize variables
-        let cart = [];
-        let wishlist = [];
-        
-        // Search functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.querySelector('.search-input');
-            const searchBtn = document.querySelector('.search-btn');
-            const productCards = document.querySelectorAll('.product-card');
-            const cartBtn = document.querySelector('.cart-btn');
-            const wishlistBtn = document.querySelector('.wishlist-btn');
-            const cartCount = document.querySelector('.cart-count');
-            const wishlistCount = document.querySelector('.wishlist-count');
-            
-            console.log('Enhanced functionality initialized. Found', productCards.length, 'product cards');
-            
-            // Update counts on page load
-            updateCartCount();
-            updateWishlistCount();
-            
-            // Search products function
-            function searchProducts(query) {
-                const searchTerm = query.toLowerCase().trim();
-                let hasResults = false;
-                
-                console.log('Searching for:', searchTerm);
-                
-                productCards.forEach((card, index) => {
-                    const titleElement = card.querySelector('.product-title');
-                    const descriptionElement = card.querySelector('.product-description');
-                    
-                    if (titleElement && descriptionElement) {
-                        const title = titleElement.textContent.toLowerCase();
-                        const description = descriptionElement.textContent.toLowerCase();
-                        
-                        if (searchTerm === '' || title.includes(searchTerm) || description.includes(searchTerm)) {
-                            card.style.display = 'block';
-                            card.style.animation = 'fadeInUp 0.5s ease';
-                            hasResults = true;
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    }
-                });
-                
-                showSearchResults(searchTerm, hasResults);
-                
-                // Scroll to products section if search has results
-                if (hasResults && searchTerm !== '') {
-                    document.querySelector('#collections')?.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'start' 
-                    });
-                }
-            }
-            
-            // Show search results message
-            function showSearchResults(term, hasResults) {
-                let searchMessage = document.querySelector('.search-results-message');
-                const productsGrid = document.querySelector('.products-grid');
-                
-                if (!searchMessage && productsGrid) {
-                    searchMessage = document.createElement('div');
-                    searchMessage.className = 'search-results-message';
-                    productsGrid.parentNode.insertBefore(searchMessage, productsGrid);
-                }
-                
-                if (searchMessage) {
-                    if (term && !hasResults) {
-                        searchMessage.innerHTML = `
-                            <div class="no-results">
-                                <h3>🔍 No products found for "${term}"</h3>
-                                <p>Try searching for:</p>
-                                <div class="search-suggestions">
-                                    <button onclick="performSearch('gold')" class="suggestion-btn">Gold</button>
-                                    <button onclick="performSearch('diamond')" class="suggestion-btn">Diamond</button>
-                                    <button onclick="performSearch('ring')" class="suggestion-btn">Ring</button>
-                                    <button onclick="performSearch('necklace')" class="suggestion-btn">Necklace</button>
-                                    <button onclick="performSearch('earring')" class="suggestion-btn">Earrings</button>
-                                </div>
-                                <button onclick="clearSearch()" class="clear-search-btn">Clear Search</button>
-                            </div>
-                        `;
-                        searchMessage.style.display = 'block';
-                    } else if (term && hasResults) {
-                        const visibleCards = Array.from(productCards).filter(card => 
-                            card.style.display !== 'none'
-                        );
-                        searchMessage.innerHTML = `
-                            <div class="search-results">
-                                <p>✅ Found ${visibleCards.length} product(s) for "${term}"</p>
-                                <button onclick="clearSearch()" class="clear-search-btn">Clear Search</button>
-                            </div>
-                        `;
-                        searchMessage.style.display = 'block';
-                    } else {
-                        searchMessage.style.display = 'none';
-                    }
-                }
-            }
-            
-            // Clear search function
-            window.clearSearch = function() {
-                searchInput.value = '';
-                productCards.forEach(card => {
-                    card.style.display = 'block';
-                });
-                const searchMessage = document.querySelector('.search-results-message');
-                if (searchMessage) {
-                    searchMessage.style.display = 'none';
-                }
-            };
-            
-            // Perform search function (for suggestion buttons)
-            window.performSearch = function(term) {
-                searchInput.value = term;
-                searchProducts(term);
-            };
-            
-            // Search event listeners
-            searchBtn.addEventListener('click', function() {
-                searchProducts(searchInput.value);
-            });
-            
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    searchProducts(searchInput.value);
-                }
-            });
-            
-            // Real-time search (debounced)
-            let searchTimeout;
-            searchInput.addEventListener('input', function() {
-                clearTimeout(searchTimeout);
-                const value = this.value.trim();
-                
-                searchTimeout = setTimeout(() => {
-                    if (value === '') {
-                        clearSearch();
-                    } else if (value.length >= 2) {
-                        searchProducts(value);
-                    }
-                }, 300);
-            });
-            
-            // Cart functionality
-            function updateCartCount() {
-                const count = cart.length;
-                cartCount.textContent = count;
-                cartCount.classList.toggle('active', count > 0);
-            }
-            
-            function updateWishlistCount() {
-                const count = wishlist.length;
-                wishlistCount.textContent = count;
-                wishlistCount.classList.toggle('active', count > 0);
-            }
-            
-            function addToCart(productTitle, productPrice) {
-                const existingItem = cart.find(item => item.title === productTitle);
-                
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cart.push({
-                        title: productTitle,
-                        price: productPrice,
-                        quantity: 1
-                    });
-                }
-                
-                updateCartCount();
-                
-                // Show notification
-                showNotification(`Added "${productTitle}" to cart!`, 'success');
-            }
-            
-            function toggleWishlist(productTitle) {
-                const existingIndex = wishlist.findIndex(item => item.title === productTitle);
-                
-                if (existingIndex > -1) {
-                    wishlist.splice(existingIndex, 1);
-                    showNotification(`Removed "${productTitle}" from wishlist`, 'info');
-                    return false;
-                } else {
-                    wishlist.push({ title: productTitle });
-                    showNotification(`Added "${productTitle}" to wishlist!`, 'success');
-                    updateWishlistCount();
-                    return true;
-                }
-            }
-            
-            function showNotification(message, type = 'info') {
-                const notification = document.createElement('div');
-                notification.className = `notification notification-${type}`;
-                notification.textContent = message;
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 100px;
-                    right: 20px;
-                    background: ${type === 'success' ? '#10B981' : '#3B82F6'};
-                    color: white;
-                    padding: 12px 20px;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-                    z-index: 10000;
-                    font-weight: 600;
-                    animation: slideInRight 0.3s ease;
-                `;
-                
-                document.body.appendChild(notification);
-                
-                setTimeout(() => {
-                    notification.style.animation = 'slideOutRight 0.3s ease';
-                    setTimeout(() => notification.remove(), 300);
-                }, 3000);
-            }
-            
-            // Cart button click
-            cartBtn.addEventListener('click', function() {
-                if (cart.length > 0) {
-                    let cartItems = cart.map(item => 
-                        `${item.title} (x${item.quantity}) - ${item.price}`
-                    ).join('\n');
-                    alert(`Cart Contents:\n\n${cartItems}\n\nTotal Items: ${cart.length}`);
-                } else {
-                    showNotification('Your cart is empty!', 'info');
-                }
-            });
-            
-            // Wishlist button click
-            wishlistBtn.addEventListener('click', function() {
-                if (wishlist.length > 0) {
-                    let wishlistItems = wishlist.map(item => item.title).join('\n');
-                    alert(`Wishlist:\n\n${wishlistItems}`);
-                } else {
-                    showNotification('Your wishlist is empty!', 'info');
-                }
-            });
-            
-            // Add to cart functionality for product cards
-            document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const productCard = this.closest('.product-card');
-                    const productTitle = productCard.querySelector('.product-title').textContent;
-                    const productPrice = productCard.querySelector('.current-price').textContent;
-                    
-                    const originalText = this.textContent;
-                    this.textContent = 'Adding...';
-                    this.disabled = true;
-                    
-                    setTimeout(() => {
-                        addToCart(productTitle, productPrice);
-                        this.textContent = 'Added! ✓';
-                        this.style.background = '#10B981';
-                        
-                        // Animate cart button
-                        cartBtn.style.animation = 'bounce 0.5s ease';
-                        
-                        setTimeout(() => {
-                            this.textContent = originalText;
-                            this.disabled = false;
-                            this.style.background = '';
-                            cartBtn.style.animation = '';
-                        }, 1500);
-                    }, 500);
-                });
-            });
-            
-            // Wishlist functionality for product cards
-            document.querySelectorAll('.action-btn.wishlist').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const productCard = this.closest('.product-card');
-                    const productTitle = productCard.querySelector('.product-title').textContent;
-                    
-                    const isInWishlist = toggleWishlist(productTitle);
-                    
-                    if (isInWishlist) {
-                        this.textContent = '💖';
-                        this.style.background = '#ff6b6b';
-                        this.style.color = 'white';
-                        
-                        // Animate wishlist button
-                        wishlistBtn.style.animation = 'bounce 0.5s ease';
-                        setTimeout(() => wishlistBtn.style.animation = '', 500);
-                    } else {
-                        this.textContent = '❤️';
-                        this.style.background = '';
-                        this.style.color = '';
-                        updateWishlistCount();
-                    }
-                });
-            });
-            
-            // Contact form functionality
-            const contactForm = document.getElementById('quickContactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const submitBtn = this.querySelector('.submit-contact-btn');
-                    const originalText = submitBtn.textContent;
-                    
-                    submitBtn.textContent = 'Sending...';
-                    submitBtn.disabled = true;
-                    
-                    // Simulate form submission
-                    setTimeout(() => {
-                        submitBtn.textContent = 'Message Sent! ✓';
-                        submitBtn.style.background = '#10B981';
-                        
-                        showNotification('Message sent successfully!', 'success');
-                        
-                        // Reset form after 2 seconds
-                        setTimeout(() => {
-                            this.reset();
-                            submitBtn.textContent = originalText;
-                            submitBtn.disabled = false;
-                            submitBtn.style.background = '';
-                        }, 2000);
-                    }, 1000);
-                });
-            }
-        });
-        
-        // Add CSS animations
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideInRight {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            
-            @keyframes slideOutRight {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-            
-            @keyframes bounce {
-                0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-                40% { transform: translateY(-10px); }
-                60% { transform: translateY(-5px); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
 
    
 </body>
