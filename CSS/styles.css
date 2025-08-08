@@ -1489,6 +1489,27 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #d4a643;
 }
 
+/* Form Note Styling */
+.form-note {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f6f0;
+    border-left: 4px solid var(--primary-gold);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.form-note p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.form-note strong {
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .about-grid,
