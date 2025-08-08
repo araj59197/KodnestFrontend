@@ -4,6 +4,52 @@
     box-sizing: border-box;
 }
 
+/* Fundamental Responsive Rules */
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img, 
+video, 
+iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Responsive text */
+h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Responsive tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Responsive forms */
+input, textarea, select {
+    max-width: 100%;
+}
+
 :root {
     /* Refined Color Palette with Better Contrast */
     --primary-gold: #D4AF37;
@@ -114,12 +160,6 @@ body {
     z-index: 1000;
     border-bottom: 1px solid #f0f0f0;
     position: relative; /* Added for mobile menu positioning */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 .header-content {
@@ -2388,27 +2428,22 @@ h1, h2, h3, h4, h5, h6 {
         color: #fff;
     }
     
-    /* Hero section mobile */
-    .hero-section,
-    .hero-home {
-        padding: 40px 0;
-        min-height: auto;
-    }
-    
+    /* ALL HERO SECTIONS - Make single column */
     .hero-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 30px;
         text-align: center;
+        padding: 40px 0;
     }
     
     .hero-main-title {
-        font-size: 32px;
+        font-size: 32px !important;
         line-height: 1.2;
     }
     
     .hero-subtitle,
     .hero-description {
-        font-size: 16px;
+        font-size: 16px !important;
     }
     
     .hero-buttons {
@@ -2428,26 +2463,26 @@ h1, h2, h3, h4, h5, h6 {
         flex-wrap: wrap;
     }
     
-    /* Grid layouts mobile */
+    /* ALL GRID LAYOUTS - Make single column */
     .products-grid,
-    .collections-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
+    .collections-grid,
     .about-grid,
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .contact-grid,
+    .story-content,
+    .team-grid,
+    .values-grid,
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
     }
     
-    /* About page mobile */
+    /* About page specific */
     .about-hero-title {
-        font-size: 36px;
+        font-size: 36px !important;
     }
     
     .about-hero-subtitle {
-        font-size: 18px;
+        font-size: 18px !important;
     }
     
     .hero-stats {
@@ -2459,19 +2494,28 @@ h1, h2, h3, h4, h5, h6 {
     .contact-form {
         padding: 30px 20px !important;
         margin: 0 10px;
+        border-radius: 15px !important;
     }
     
     .contact-form h2 {
         font-size: 24px !important;
     }
     
-    /* Footer mobile */
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
+    .form-group {
+        margin-bottom: 20px;
     }
     
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+    
+    /* Footer mobile */
     .footer-bottom {
         flex-direction: column;
         gap: 15px;
@@ -2480,15 +2524,55 @@ h1, h2, h3, h4, h5, h6 {
     
     /* Typography mobile */
     .page-title {
-        font-size: 28px;
+        font-size: 28px !important;
     }
     
     .section-title {
-        font-size: 28px;
+        font-size: 28px !important;
     }
     
     .section-subtitle {
-        font-size: 16px;
+        font-size: 16px !important;
+    }
+    
+    /* Product and Collection Cards */
+    .product-card,
+    .collection-card {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .product-title,
+    .collection-title {
+        font-size: 18px !important;
+    }
+    
+    .product-price {
+        font-size: 16px !important;
+    }
+    
+    /* Images responsive */
+    .hero-image,
+    .about-image,
+    .story-image {
+        height: auto !important;
+        max-height: 300px;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    /* Statistics responsive */
+    .stat-item {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .stat-number {
+        font-size: 28px !important;
+    }
+    
+    .stat-label {
+        font-size: 14px !important;
     }
 }
 
@@ -2512,13 +2596,14 @@ h1, h2, h3, h4, h5, h6 {
         height: 24px;
     }
     
+    /* Extra small mobile hero */
     .hero-main-title {
-        font-size: 28px;
+        font-size: 26px !important;
     }
     
     .hero-subtitle,
     .hero-description {
-        font-size: 14px;
+        font-size: 14px !important;
     }
     
     .btn-primary,
@@ -2533,28 +2618,61 @@ h1, h2, h3, h4, h5, h6 {
         padding: 12px 15px;
     }
     
+    /* About page extra small */
     .about-hero-title {
-        font-size: 28px;
+        font-size: 26px !important;
     }
     
     .about-hero-subtitle {
-        font-size: 16px;
+        font-size: 14px !important;
     }
     
+    /* Contact form extra small */
     .contact-form {
         padding: 20px 15px !important;
+        margin: 0 5px;
     }
     
     .contact-form h2 {
         font-size: 20px !important;
     }
     
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    /* Typography extra small */
     .page-title {
-        font-size: 24px;
+        font-size: 22px !important;
     }
     
     .section-title {
-        font-size: 24px;
+        font-size: 22px !important;
+    }
+    
+    .section-subtitle {
+        font-size: 14px !important;
+    }
+    
+    /* Product cards extra small */
+    .product-title,
+    .collection-title {
+        font-size: 16px !important;
+    }
+    
+    .product-price {
+        font-size: 14px !important;
+    }
+    
+    /* Stats extra small */
+    .stat-number {
+        font-size: 24px !important;
+    }
+    
+    .stat-label {
+        font-size: 12px !important;
     }
 }
 
