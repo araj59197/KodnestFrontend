@@ -4,7 +4,8 @@
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=D4AF37&center=true&vCenter=true&random=false&width=600&lines=Welcome+to+Kohinoor+Jewels!;Handcrafted+Luxury+Since+1985;Discover+Timeless+Beauty;✨+Premium+Jewelry+Collection+✨)
 
-<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Gem%20Stone.png" alt="Gem Stone" width="100" height="100" />
+<img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated### 💎 **Featured Jewelry Collection**  
+*Premium jewelry products showcase*luent-Emojis/master/Emojis/Objects/Gem%20Stone.png" alt="Gem Stone" width="100" height="100" />
 
 </div>
 
@@ -423,16 +424,22 @@ This project is **automatically deployed** using GitHub Pages:
   <img src="https://media.giphy.com/media/3oKIPnAiaMCws8nOsE/giphy.gif" width="200">
 </div>
 
-## 📸 Screenshots
+## 📸 Website Pages
 
 <div align="center">
 
-### 🏠 **Home Page**
-*Elegant landing page with luxury jewelry showcase*
+### � **Live Website Preview**
 
-<img src="https://raw.githubusercontent.com/araj59197/KodnestFrontend/main/Html/Images/gold-necklace.jpg" alt="Featured Jewelry" width="400">
+<div align="center">
 
-**Live Demo:** [🌐 Kohinoor Jewels Homepage](https://araj59197.github.io/KodnestFrontend/)
+| 📄 **Page** | 🎯 **Features** | 🔗 **Live Link** |
+|:---:|:---:|:---:|
+| 🏠 **Homepage** | Hero Section, Featured Products, Navigation | [View Homepage](https://araj59197.github.io/KodnestFrontend/) |
+| 📖 **About Page** | Company Story, Mission, Team Information | [View About](https://araj59197.github.io/KodnestFrontend/Html/about.html) |
+| 💎 **Collections** | Product Catalog, Jewelry Showcase | [View Collections](https://araj59197.github.io/KodnestFrontend/Html/collections.html) |
+| 📞 **Contact Page** | Contact Form, Business Information | [View Contact](https://araj59197.github.io/KodnestFrontend/Html/contact.html) |
+
+</div>
 
 ---
 
