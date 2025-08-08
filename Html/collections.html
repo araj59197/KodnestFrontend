@@ -41,6 +41,13 @@
                     </a>
                 </div>
                 <nav class="navigation" role="navigation" aria-label="Main navigation">
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                    
                     <ul class="nav-list">
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="collections.html" class="active">Collections</a></li>
@@ -236,5 +243,38 @@
             </p>
         </div>
     </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileMenuToggle && navList) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenuToggle.classList.toggle('active');
+                    navList.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = document.querySelectorAll('.nav-list a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenuToggle.classList.remove('active');
+                        navList.classList.remove('active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuToggle.contains(event.target) && !navList.contains(event.target)) {
+                        mobileMenuToggle.classList.remove('active');
+                        navList.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
